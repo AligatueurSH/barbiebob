@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Jeanine White" description="About Jeanine White Lorem Ipsum">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="A Propos"
+				tagline="Merci d'être passé. Lisez ci-dessous pour en savoir plus sur moi-même et mon parcours."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/fond.avif"
+					
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Parcours</h2>
+				<div class="content">
+					<p>
+						Je suis un jeune homme de 21 ans, intéressé depuis un moment à tout ce qui touche ou se rapporte à l'informatique. J'ai eu un parcours scolaire vaste et riche dans différents domaines ce qui m'a permis d'élargir mes horizons et mon champ de compétences professionnelles. J'ai étudié l'aspect technique et brut de l'informatique au lycée en me concentrant sur le réseau ainsi que la partie plus technique avec le développement web à l'IUT en études supérieures mais également beaucoup de mon côté. Je suis également auto-entrepreneur avec des collaborateurs dans le domaine de la création et de la gestion de contenu vidéos sur les réseaux sociaux comme YouTube. Toutes ces expériences m'ont forgé un solide socle et un esprit professionnel que je serais heureux de mettre au service d'une entreprise dans le cadre d'une alternance.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Parcours Scolaire </h2>
+				<div class="content">
+					<p><strong>2022-2023</strong><br>
+						Bachelor Universitaire de Technologie : Métiers du Multimédia et de l'Internet<br>
+						IUT de Troyes</p>
+						
+						<p><strong>2019-2022</strong><br>
+						BAC Professionnel Systèmes Numériques : Options Réseaux Informatiques<br>
+						Lycée Saint-Jean-Baptiste de La Salle, Reims</p>
+						
+						<p><strong>2017-2019</strong><br>
+						CAP Maintenance des Bâtiments de Collectivités<br>
+						Lycée Saint-Jean-Baptiste de La Salle, Reims</p>
+						
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+<p>Linux-Shell</p>
+<p>Docker</p>
+<p>SQL</p>
+<p>GPI</p>
+<p>Wordpress</p>
+<p>Langages Front-end</p>
+<p>Analyse et planification</p>
+<p>Attention aux détails</p>
+
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
